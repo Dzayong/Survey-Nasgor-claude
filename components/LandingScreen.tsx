@@ -59,7 +59,7 @@ export default function LandingScreen({ onStart }: LandingScreenProps) {
 
       {/* 2 Mode tombol */}
       <div className="w-full flex flex-col gap-3">
-        <button
+        <button type="button"
           onClick={() => onStart('tap')}
           className="w-full py-4 bg-brand-green hover:bg-brand-green-dark active:bg-brand-green-dark text-white font-bold text-lg rounded-2xl shadow-md transition-all active:scale-[0.98] flex items-center justify-center gap-2"
         >
@@ -69,7 +69,7 @@ export default function LandingScreen({ onStart }: LandingScreenProps) {
           Isi dengan Ketuk
         </button>
 
-        <button
+        <button type="button"
           onClick={() => onStart('voice')}
           className="w-full py-4 bg-white hover:bg-brand-green-light active:bg-brand-green-light border-2 border-brand-green text-brand-green font-bold text-lg rounded-2xl shadow-sm transition-all active:scale-[0.98] flex items-center justify-center gap-2"
         >

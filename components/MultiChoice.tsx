@@ -12,7 +12,7 @@ export default function MultiChoice({ options, value, onChange }: MultiChoicePro
       {options.map((option) => {
         const selected = value === option
         return (
-          <button
+          <button type="button"
             key={option}
             onClick={() => onChange(option)}
             className={`w-full py-4 px-5 rounded-2xl text-left text-base font-medium transition-all duration-150 border-2

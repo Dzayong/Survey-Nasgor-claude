@@ -21,7 +21,7 @@ export default function MultiSelect({ options, value, onChange }: MultiSelectPro
       {options.map((option) => {
         const selected = value.includes(option)
         return (
-          <button
+          <button type="button"
             key={option}
             onClick={() => toggle(option)}
             className={`w-full py-4 px-5 rounded-2xl text-left text-base font-medium transition-all duration-150 border-2

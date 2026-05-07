@@ -12,7 +12,7 @@ export default function StarRating({ value, onChange }: StarRatingProps) {
     <div className="flex flex-col items-center gap-3 py-2">
       <div className="flex justify-center gap-2">
         {[1, 2, 3, 4, 5].map((star) => (
-          <button
+          <button type="button"
             key={star}
             onClick={() => onChange(star)}
             className="transition-transform hover:scale-110 active:scale-95 p-1"

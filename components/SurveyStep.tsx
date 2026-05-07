@@ -103,7 +103,7 @@ export default function SurveyStep({
           {questionIndex + 1} / {totalQuestions}
         </span>
 
-        <button
+        <button type="button"
           onClick={() => {
             stopSpeaking()
             onModeChange(mode === 'tap' ? 'voice' : 'tap')
@@ -188,14 +188,14 @@ export default function SurveyStep({
       {/* Navigation */}
       <div className="flex gap-3">
         {questionIndex > 0 && (
-          <button
+          <button type="button"
             onClick={onBack}
             className="flex-1 py-4 rounded-2xl border-2 border-gray-200 text-gray-600 font-semibold text-base transition-all active:scale-[0.98] hover:border-gray-300"
           >
             Kembali
           </button>
         )}
-        <button
+        <button type="button"
           onClick={onNext}
           disabled={!canProceed || isSubmitting}
           className={`flex-[2] py-4 rounded-2xl font-bold text-base transition-all duration-150
