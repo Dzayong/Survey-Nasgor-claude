@@ -4,10 +4,11 @@ import { useState } from 'react'
 import { questions } from '@/lib/questions'
 import type { SurveyAnswers } from '@/lib/types'
 import LandingScreen from '@/components/LandingScreen'
+import Instructions from '@/components/Instructions'
 import SurveyStep from '@/components/SurveyStep'
 import ThankYou from '@/components/ThankYou'
 
-type AppStep = 'landing' | 'survey' | 'thankYou'
+type AppStep = 'landing' | 'instructions' | 'survey' | 'thankYou'
 
 export default function Page() {
   const [appStep, setAppStep] = useState<AppStep>('landing')
@@ -45,15 +46,23 @@ export default function Page() {
     if (currentQuestion > 0) setCurrentQuestion((prev) => prev - 1)
   }
 
-  const handleStart = (selectedMode: 'tap' | 'voice') => {
+  const handleSelectMode = (selectedMode: 'tap' | 'voice') => {
     setMode(selectedMode)
-    setAppStep('survey')
+    setAppStep('instructions')
   }
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-start bg-gray-50 px-4 py-8">
       <div className="w-full max-w-md">
-        {appStep === 'landing' && <LandingScreen onStart={handleStart} />}
+        {appStep === 'landing' && <LandingScreen onStart={handleSelectMode} />}
+
+        {appStep === 'instructions' && (
+          <Instructions
+            mode={mode}
+            onContinue={() => setAppStep('survey')}
+            onBack={() => setAppStep('landing')}
+          />
+        )}
 
         {appStep === 'survey' && (
           <SurveyStep

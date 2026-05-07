@@ -10,6 +10,14 @@ interface LandingScreenProps {
 export default function LandingScreen({ onStart }: LandingScreenProps) {
   return (
     <div className="flex flex-col items-center text-center px-2">
+      {/* Badge resmi */}
+      <div className="flex items-center gap-1.5 bg-brand-green text-white text-xs font-semibold px-3 py-1 rounded-full mb-4 shadow-sm">
+        <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+        </svg>
+        Survei Resmi Nasi Goreng D4
+      </div>
+
       {/* Logo */}
       <div className="relative w-28 h-28 rounded-full overflow-hidden border-4 border-brand-green shadow-lg mb-4">
         <Image
@@ -23,7 +31,7 @@ export default function LandingScreen({ onStart }: LandingScreenProps) {
 
       <h1 className="text-2xl font-bold text-gray-800 mb-0.5">Nasi Goreng D4</h1>
       <p className="text-sm text-brand-green font-medium mb-5">
-        Perum Abdi Negara Blok D4 No.18, Rancaekek
+        Jl. Prasetya D4 No.18, Kab. Bandung
       </p>
 
       {/* Sambutan */}
@@ -57,27 +65,13 @@ export default function LandingScreen({ onStart }: LandingScreenProps) {
         </span>
       </div>
 
-      {/* 2 Mode tombol */}
-      <div className="w-full flex flex-col gap-3">
+      {/* Tombol mulai — tap mode only */}
+      <div className="w-full">
         <button type="button"
           onClick={() => onStart('tap')}
-          className="w-full py-4 bg-brand-green hover:bg-brand-green-dark active:bg-brand-green-dark text-white font-bold text-lg rounded-2xl shadow-md transition-all active:scale-[0.98] flex items-center justify-center gap-2"
+          className="w-full py-4 bg-brand-green hover:bg-brand-green-dark active:bg-brand-green-dark text-white font-bold text-lg rounded-2xl shadow-md transition-all active:scale-[0.98]"
         >
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M9 11.24V7.5C9 6.12 10.12 5 11.5 5S14 6.12 14 7.5v3.74c1.21-.81 2-2.18 2-3.74C16 5.01 13.99 3 11.5 3S7 5.01 7 7.5c0 1.56.79 2.93 2 3.74zm9.84 4.63l-4.54-2.26c-.17-.07-.35-.11-.54-.11H13v-6c0-.83-.67-1.5-1.5-1.5S10 6.67 10 7.5v10.74l-3.43-.72c-.08-.01-.15-.03-.24-.03-.31 0-.59.13-.79.33l-.79.8 4.94 4.94c.27.27.65.44 1.06.44h6.79c.75 0 1.33-.55 1.44-1.28l.75-5.27c.01-.07.02-.14.02-.2 0-.62-.38-1.16-.91-1.38z"/>
-          </svg>
-          Isi dengan Ketuk
-        </button>
-
-        <button type="button"
-          onClick={() => onStart('voice')}
-          className="w-full py-4 bg-white hover:bg-brand-green-light active:bg-brand-green-light border-2 border-brand-green text-brand-green font-bold text-lg rounded-2xl shadow-sm transition-all active:scale-[0.98] flex items-center justify-center gap-2"
-        >
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 1a4 4 0 0 1 4 4v6a4 4 0 0 1-8 0V5a4 4 0 0 1 4-4z" />
-            <path d="M19 11a1 1 0 0 0-2 0 5 5 0 0 1-10 0 1 1 0 0 0-2 0 7 7 0 0 0 6 6.93V20H9a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2h-2v-2.07A7 7 0 0 0 19 11z" />
-          </svg>
-          Isi dengan Suara
+          Mulai Survei
         </button>
       </div>
 
